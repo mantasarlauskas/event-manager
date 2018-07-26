@@ -1,0 +1,131 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #F2F2F2;
+    font-family: 'Open Sans', sans-serif;
+}
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%; 
+    position: relative; 
+    padding-bottom: 136px; 
+}
+input, textarea {
+    font-family: 'Open Sans', sans-serif;
+}
+textarea {
+    resize: none;
+    line-height: 15px;
+}
+button:active {
+    transform: translateY(1px);
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+.container {
+    background: #FFFFFF;
+    margin: 0 auto 80px auto;
+    min-height: 780px;
+    width: 900px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1); 
+    box-sizing: border-box;
+    position: relative;
+}
+.clearfix::after {
+    display: table;
+    content: "";
+    clear: both;
+}
+.title {
+    color: #0054A6;
+    display: table;
+    margin: 0 auto;
+    font-size: 26px;
+    line-height: 36px;
+}
+.block-label {
+    display: block;
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+.input input, .input textarea {
+    width: 100%;
+    border: 1px solid #E4E9F2;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+}
+.input input {
+    height: 44px;
+}
+.input textarea {
+    height: 90px;
+}
+.button-wrapper {
+    position: relative;
+    height: 36px;
+}
+.center-button {
+    font-family: 'Open Sans', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.center-button:active {
+    transform: translateX(-50%) translateY(-45%);
+}
+.button {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 27px;
+    height: 36px;
+    width: 165px;
+    background: #0054A6;
+    border: 1px solid #0054A6;
+    border-radius: 7px;
+    color: #FFF;
+    cursor: pointer;
+    outline: none;
+}
+.message-error-wrapper-big {
+    height: 23px;
+}
+.message-error-wrapper {
+    min-height: 13px;
+    margin-top: 5px;
+}
+.message-error {
+    font-size: 12px;
+    line-height: 13px;
+    color: red;
+}
+.form-invalid {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.error-block {
+    clear: both;
+}
+@media only screen and (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+}
+

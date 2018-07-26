@@ -1,0 +1,61 @@
+<tr class='table-row' ng-class="{'display-details' : participantDetails}">
+    <td class='first-column '>{{ $index + 1 + (pagination.participantsCurrentPage - 1) * 10 }}</td>
+    <td class='second-column'>{{ participant.first_name }}  {{ participant.last_name }}</td>
+    <td class='third-column'>{{ participant.email }}</td>
+    <td class='more'><span class='hyperlink' ng-click='showDetails()'>daugiau</span></td>
+    <td class='fourth-column'>{{ participant.telephone || '&ndash;' }}</td>
+    <td class='fifth-column'>{{ participant.age || '&ndash;' }}</td>
+    <td ng-if="can('create_event')" class='edit'>
+        <img src='img/delete.png' ng-click='removeParticipant($index, participant.event_id)' class='delete-button'>
+    </td>
+</tr>
+<tr ng-if='participantDetails' class='details-wrapper'>
+    <td colspan='100%'>
+        <div class='details'>
+            <div class='details-first'>
+                <div class='details-semi-bold'>
+                    Numeris
+                </div>
+                <div class='details-data'>{{ $index + 1 + (pagination.participantsCurrentPage - 1) * 10 }}</div>
+                <div ng-if="can('create_event')" class='edit'>
+                    <img src='img/delete.png' ng-click='removeParticipant($index, participant.event_id)' class='delete-button'>
+                </div>
+            </div>
+            <div class='details-row'>
+                <div class='details-semi-bold'>
+                    Vardas Pavardė
+                </div>
+                <div class='details-data'>
+                    {{ participant.first_name }}  {{ participant.last_name }}
+                </div>
+            </div>
+            <div class='details-row'>
+                <div class='details-semi-bold'>
+                    El. paštas
+                </div>
+                <div class='details-data'>
+                    {{ participant.email }}
+                </div>
+            </div>
+            <div class='details-row'>
+                <div class='details-semi-bold'>
+                    Telefonas
+                </div>
+                <div class='details-data'>
+                    {{ participant.telephone || '&ndash;' }} 
+                </div>
+            </div>
+            <div class='details-row'>
+                <div class='details-semi-bold'>
+                    Amžius
+                </div>
+                <div class='details-data'>
+                    {{ participant.age || '&ndash;' }}
+                </div>
+            </div>
+            <div class='details-less'>
+                <span class="hyperlink" ng-click='hideDetails()'>mažiau</span>
+            </div>
+        </div>
+    </td>   
+</tr>

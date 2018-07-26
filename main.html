@@ -1,0 +1,23 @@
+<div class='header'></div>
+<div class='tabs'>
+    <div class='tab-wrapper'>
+        <button class='tab tab-1' ng-click="toggleTab('tab-1', 'tab-2')">Renginiai</button>
+    </div>
+    <div class='tab-wrapper'>
+        <button class='tab tab-2' ng-click="toggleTab('tab-2', 'tab-1')">Dalyviai</button> 
+    </div>
+    <div class='logout' ng-click='logout()'>Atsijungti</div>
+</div>
+<div class='container container-content'>
+    <!-- Events Table -->
+    <div ng-if='displayEvents' ng-include="'includes/events.html'" ng-controller="EventsCtrl"></div>
+    <!-- Participants Table -->
+    <div ng-if='!displayEvents' ng-include="'includes/participants.html'" ng-controller="ParticipantsCtrl"></div>
+</div>
+<!-- Event Form Modal Window -->
+<div ng-if='createEvent' ng-include="'includes/event-form.html'" class='modal'></div>
+<!-- Create Admin Modal Window -->
+<div ng-if='createAdmin' ng-include="'includes/admin-form.html'" class='modal'></div>
+<!-- Event Participants Modal Window -->
+<div ng-if='participantsTable' ng-include="'includes/event-participants.html'" class='modal'></div>
+<div ng-include="'includes/footer.html'"></div>

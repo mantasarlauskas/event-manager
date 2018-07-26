@@ -1,0 +1,32 @@
+<div ng-include="'includes/header.html'"></div>
+<div class="container login-container">
+    <div class="title auth-title">Prisijungimas</div>
+    <form class="auth-form" ng-submit="submitLoginForm()" name="loginForm" novalidate>
+        <div class="message-error-wrapper form-invalid">
+            <div class="message-error" ng-if="loginForm.$submitted && loginForm.$invalid">Teisingai užpildykite visus formos laukus</div>
+            <div class="message-error" ng-if="loginError">Neteisingas el.paštas arba slaptažodis</div>
+        </div>
+        <div class="first-line-input-grid">
+            <div class="input">
+                <label class="block-label" for="email">El. paštas<span class="star"> *</span></label>
+                <input type="email" name="email" ng-model="email" id="email" required>
+                <div class="message-error-wrapper">
+                    <div class="message-error" ng-if="loginForm.email.$touched && loginForm.email.$error.required">Laukelis negali būti tuščias</div>
+                    <div class="message-error" ng-if="loginForm.email.$error.email">Netinkamas El.pašto formatas</div>  
+                </div>
+            </div>
+            <div class="input">
+                <label class="block-label" for="password">Slaptažodis<span class="star"> *</span></label>
+                <input type="password" name="password" ng-model="password" id="password" required>
+                <div class="message-error-wrapper">
+                    <div class="message-error" ng-if="loginForm.password.$touched && loginForm.password.$error.required">Laukelis negali būti tuščias</div>
+                </div>
+            </div>
+        </div>
+        <div class="submit-button-wrapper button-wrapper">
+            <input type="submit" class="center-button button" value="Prisijungti">
+        </div>
+    </form>
+</div>
+<div ng-include="'includes/footer.html'"></div>
+

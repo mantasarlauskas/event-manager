@@ -1,0 +1,19 @@
+<div class='participants-table-wrapper'>
+    <div ng-if='!participants || participants.length == 0'>
+        Dalyvių sąrašas yra tuščias.
+    </div>
+    <table class='participants-table table'>
+        <tr ng-if='participants && participants.length > 0' class='table-header'>
+            <th class='first-column'>Nr.</th>
+            <th class='second-column'>Vardas Pavardė</th>
+            <th class='third-column'>El.Paštas</th>
+            <th class='more'></th>
+            <th class='fourth-column'>Telefonas</th>
+            <th class='fifth-column'>Amžius</th>
+            <th ng-if="can('create_event')" class='edit'></th>
+        </tr>
+        <tbody participant-row ng-repeat='participant in filteredParticipants track by $index'></tbody>
+    </table>
+    <pager page-count='pagination.participantsPageCount' current-page='pagination.participantsCurrentPage'></pager>
+</div>
+

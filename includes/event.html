@@ -1,0 +1,54 @@
+<tr class='table-row' ng-class="{'grey-row ': event.date < (today | date : 'yyyy-MM-dd'), 'display-details' : details}">
+    <td class='first-column'>{{ event.title }}</td>
+    <td class='second-column'>{{ event.date }}</td>
+    <td ng-if='!description' class='third-column' >
+        {{ event.description | limitTo: 30 }}
+        <span ng-if='event.description.length > 30'>... <span class='hyperlink' ng-click='showMore()'>daugiau</span></span>
+    </td>
+    <td ng-if='description' class='third-column'>
+        {{ event.description }}
+        <span class='hyperlink' ng-click='showLess()'>mažiau</span>
+    </td>
+    <td class='fourth-column'>{{ event.registration_begin }} - {{ event.registration_end }}</td>
+    <td class='fifth-column'>
+        {{ event.count }}
+        <div ng-if='event.count != 0' class='hyperlink' ng-click='showParticipantsTable(event.title)'>peržiūrėti</div>
+    </td>
+    <td class='more'><span class='hyperlink' ng-click='showDetails()'>daugiau</span></td>
+    <td ng-if="can('create_event')" class='edit'>  
+        <img ng-if="event.date >= (today | date : 'yyyy-MM-dd')" src='img/edit.png' ng-click='showEditEvent(event, $index)' class='edit-button'>
+        <img src='img/delete.png' ng-click='deleteEvent($index, event.title)' class='delete-button'>
+    </td>
+</tr>
+<tr ng-if='details' class='details-wrapper' ng-class="{'grey-row': event.date < (today | date : 'yyyy-MM-dd')}">
+    <td colspan='100%'>
+        <div class='details'>
+            <div ng-class="{'details-first' : can('create_event'), 'details-row' : can('create_admin')}">
+                <div class='details-semi-bold'>Pavadinimas</div>
+                <div class='details-data'>{{ event.title }}</div>
+                <div ng-if="can('create_event')" class='edit'>
+                    <img ng-if="event.date >= (today | date : 'yyyy-MM-dd')" src='img/edit.png' ng-click='showEditEvent(event, $index)' class='edit-button'>
+                    <img src='img/delete.png' ng-click='deleteEvent($index, event.title)' class='delete-button'>
+                </div>
+            </div>
+            <div class='details-row'>
+                <div class='details-semi-bold'>Data</div>
+                <div class='details-data'>{{ event.date }}</div>
+            </div>
+            <div class='details-row'>
+                <div class='details-semi-bold'>Registracijos laikas</div>
+                <div class='details-data'>{{ event.registration_begin }} - {{ event.registration_end }}</div>
+            </div>
+            <div class='details-row'>
+                <div class='details-semi-bold'>Dalyviai</div>
+                <div class='details-data'>
+                    {{ event.count }} 
+                    <span ng-if='event.count != 0' class='hyperlink' ng-click='showParticipantsTable(event.title)'>peržiūrėti</span>
+                </div>
+            </div>
+            <div class='details-description'>{{ event.description }}</div>
+            <div class='details-less'><span class='hyperlink' ng-click='hideDetails()'>mažiau</span></div>
+        </div>
+    </td>
+</tr>
+

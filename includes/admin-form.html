@@ -1,0 +1,37 @@
+<div id="create-admin-modal" ng-controller="AdminFormCtrl">
+    <img src="img/close.png" class="close-button" ng-click="hideCreateAdmin()">
+    <div class="title create-admin-title">Naujas administratorius</div>
+    <form class="create-admin-form" name="createAdminForm" novalidate ng-submit="createAdmin()">
+        <div class="message-error-wrapper-big">
+            <div class="message-error form-invalid" ng-if="createAdminForm.$submitted && createAdminForm.$invalid && 
+                !passwordError && !adminError">Teisingai užpildykite visus formos laukus</div>
+            <div class="message-error" ng-if="passwordError">Slaptažodžiai turi sutapti</div>
+            <div class="message-error" ng-if="adminError">Toks administratorius jau egzistuoja</div>
+        </div>
+        <div class="input input-left">
+            <label class="block-label" for="admin-email">El. paštas</label>
+            <input type="email" ng-model="form.email" name="adminEmail" id="admin-email" required>
+            <div class="message-error-wrapper">
+                <div class="message-error" ng-if="createAdminForm.adminEmail.$touched && createAdminForm.adminEmail.$error.required">Laukelis negali būti tuščias</div>
+                <div class="message-error" ng-if="createAdminForm.adminEmail.$error.email">Netinkamas el.pašto formatas</div>
+            </div>
+        </div>
+        <div class="input">
+            <label class="block-label" for="admin-first-password">Slaptažodis</label>
+            <input type="password" ng-model="form.firstPassword" name="adminFirstPassword" id="admin-first-password" required>
+            <div class="message-error-wrapper">
+                <div class="message-error" ng-if="createAdminForm.adminFirstPassword.$touched && createAdminForm.adminFirstPassword.$error.required">Laukelis negali būti tuščias</div>
+            </div>
+        </div>
+        <div class="input last-input">
+            <label class="block-label" for="admin-second-password">Slaptažodžio pakartojimas</label>
+            <input type="password" ng-model="form.secondPassword" name="adminSecondPassword" id="admin-second-password" required>
+            <div class="message-error-wrapper">
+                <div class="message-error" ng-if="createAdminForm.adminSecondPassword.$touched && createAdminForm.adminSecondPassword.$error.required">Laukelis negali būti tuščias</div>
+            </div>
+        </div>
+        <div class="button-wrapper">
+            <input type="submit" class="center-button button" value="Sukurti">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,120 @@
+.modal {
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+#event-modal, #participants-table-modal, #create-admin-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: #FFF;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+#event-modal {
+    width: 550px;
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+}
+#participants-table-modal {
+    width: 700px;
+    padding-bottom: 70px;
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+}
+#create-admin-modal  {
+    width: 400px;
+    padding-bottom: 50px;
+}
+.event-form {
+    width: 430px;
+    margin: 0 auto;
+}
+.event-form .input {
+    margin-bottom: 10px;
+}
+.event-form .last-input {
+    margin-bottom: 60px;
+}
+.modal-submit-button-wrapper {
+    margin-top: 40px;
+}
+.create-admin-title {
+    padding-top: 7px;
+    padding-bottom: 34px;
+}
+.create-admin-title, .event-title {
+    width: 100%;
+    text-align: center;
+}
+.create-admin-form {
+    margin: 0 auto;
+    width: 280px;
+}
+.create-admin-form .input {
+    width: 100%;
+    margin-bottom: 30px;
+}
+.create-admin-form .last-input {
+    margin-bottom: 70px;
+}
+.event-title {
+    padding-bottom: 17px;
+}
+.event-form .button-wrapper {
+    margin-bottom: 30px;
+}
+.input-left {
+    float: left;
+    margin-right: 20px;
+}
+#event-name {
+    width: 245px;
+}
+#event-date {
+    width: 165px;
+}
+#event-date-start,
+#event-date-end,
+#event-time-start,
+#event-time-end {
+    width: 205px;
+}
+.close-button {
+    float: right;
+    cursor: pointer;
+    margin: 15px 15px 0 15px;
+    width: 25px;
+}
+.close-button:active {
+    transform: translateY(1px);
+}
+.error-left {
+    float: left;
+}
+.error-right {
+    float: right;
+}
+@media only screen and (max-width: 680px) {
+    .error-second-line {
+        float: left;
+    }
+    #event-modal, .event-form, #participants-table-modal, #create-admin-modal, .create-admin-form {
+        width: 80%;
+    }
+    #event-name, #event-date,
+    #event-date-start, #event-date-end,
+    #event-time-start, #event-time-end {
+        width: 100%;
+    }
+    .input-left {
+        float: none;
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+}

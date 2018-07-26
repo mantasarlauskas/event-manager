@@ -1,0 +1,158 @@
+{
+    "admins": {
+        "admin@admin": {
+            "password": "admin",
+            "role": 1
+        },
+        "root@root": {
+            "password": "root",
+            "role": 0
+        }
+    },
+    "events": [
+        {
+            "title": "event1",
+            "date": "2018-07-28",
+            "start_time": "01:00",
+            "end_time": "05:00",
+            "email_content": "text",
+            "max_participants": 20,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi massa, pretium sed condimentum condimentum, tempus eu orci. Etiam non nibh a risus malesuada eleifend molestie ut odio. Sed sit amet mauris nec ante laoreet imperdiet. Proin pharetra ultricies justo, quis egestas felis vestibulum vel. ",
+            "registration_begin": "2018-07-10",
+            "registration_end": "2018-07-26",
+            "count": 0
+        },
+        {
+            "title": "event2",
+            "date": "2018-07-12",
+            "start_time": "01:00",
+            "end_time": "05:00",
+            "email_content": "text",
+            "max_participants": 20,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi massa, pretium sed condimentum condimentum, tempus eu orci. Etiam non nibh a risus malesuada eleifend molestie ut odio. Sed sit amet mauris nec ante laoreet imperdiet. Proin pharetra ultricies justo, quis egestas felis vestibulum vel. ",
+            "registration_begin": "2018-07-01",
+            "registration_end": "2018-07-10",
+            "count": 0
+        },
+        {
+            "title": "event3",
+            "date": "2018-09-01",
+            "start_time": "01:00",
+            "end_time": "05:00",
+            "email_content": "text",
+            "max_participants": 20,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi massa, pretium sed condimentum condimentum, tempus eu orci. Etiam non nibh a risus malesuada eleifend molestie ut odio. Sed sit amet mauris nec ante laoreet imperdiet. Proin pharetra ultricies justo, quis egestas felis vestibulum vel. ",
+            "registration_begin": "2018-07-15",
+            "registration_end": "2018-08-25",
+            "count": 0
+        },
+        {
+            "title": "event4",
+            "date": "2018-07-28",
+            "start_time": "01:00",
+            "end_time": "05:00",
+            "email_content": "text",
+            "max_participants": 20,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi massa, pretium sed condimentum condimentum, tempus eu orci. Etiam non nibh a risus malesuada eleifend molestie ut odio. Sed sit amet mauris nec ante laoreet imperdiet. Proin pharetra ultricies justo, quis egestas felis vestibulum vel. ",
+            "registration_begin": "2018-07-10",
+            "registration_end": "2018-07-26",
+            "count": 0
+        },
+        {
+            "title": "event5",
+            "date": "2018-07-12",
+            "start_time": "01:00",
+            "end_time": "05:00",
+            "email_content": "text",
+            "max_participants": 20,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi massa, pretium sed condimentum condimentum, tempus eu orci. Etiam non nibh a risus malesuada eleifend molestie ut odio. Sed sit amet mauris nec ante laoreet imperdiet. Proin pharetra ultricies justo, quis egestas felis vestibulum vel. ",
+            "registration_begin": "2018-07-01",
+            "registration_end": "2018-07-10",
+            "count": 0
+        },
+        {
+            "title": "event6",
+            "date": "2018-09-01",
+            "start_time": "01:00",
+            "end_time": "05:00",
+            "email_content": "text",
+            "max_participants": 20,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi massa, pretium sed condimentum condimentum, tempus eu orci. Etiam non nibh a risus malesuada eleifend molestie ut odio. Sed sit amet mauris nec ante laoreet imperdiet. Proin pharetra ultricies justo, quis egestas felis vestibulum vel. ",
+            "registration_begin": "2018-07-15",
+            "registration_end": "2018-08-25",
+            "count": 0
+        },
+        {
+            "title": "event7",
+            "date": "2018-07-28",
+            "start_time": "01:00",
+            "end_time": "05:00",
+            "email_content": "text",
+            "max_participants": 20,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi massa, pretium sed condimentum condimentum, tempus eu orci. Etiam non nibh a risus malesuada eleifend molestie ut odio. Sed sit amet mauris nec ante laoreet imperdiet. Proin pharetra ultricies justo, quis egestas felis vestibulum vel. ",
+            "registration_begin": "2018-07-10",
+            "registration_end": "2018-07-26",
+            "count": 0
+        },
+        {
+            "title": "event8",
+            "date": "2018-07-12",
+            "start_time": "01:00",
+            "end_time": "05:00",
+            "email_content": "text",
+            "max_participants": 20,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi massa, pretium sed condimentum condimentum, tempus eu orci. Etiam non nibh a risus malesuada eleifend molestie ut odio. Sed sit amet mauris nec ante laoreet imperdiet. Proin pharetra ultricies justo, quis egestas felis vestibulum vel. ",
+            "registration_begin": "2018-07-01",
+            "registration_end": "2018-07-10",
+            "count": 0
+        },
+        {
+            "title": "event9",
+            "date": "2018-09-01",
+            "start_time": "01:00",
+            "end_time": "05:00",
+            "email_content": "text",
+            "max_participants": 20,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi massa, pretium sed condimentum condimentum, tempus eu orci. Etiam non nibh a risus malesuada eleifend molestie ut odio. Sed sit amet mauris nec ante laoreet imperdiet. Proin pharetra ultricies justo, quis egestas felis vestibulum vel. ",
+            "registration_begin": "2018-07-15",
+            "registration_end": "2018-08-25",
+            "count": 0
+        },
+        {
+            "title": "event10",
+            "date": "2018-07-28",
+            "start_time": "01:00",
+            "end_time": "05:00",
+            "email_content": "text",
+            "max_participants": 20,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi massa, pretium sed condimentum condimentum, tempus eu orci. Etiam non nibh a risus malesuada eleifend molestie ut odio. Sed sit amet mauris nec ante laoreet imperdiet. Proin pharetra ultricies justo, quis egestas felis vestibulum vel. ",
+            "registration_begin": "2018-07-10",
+            "registration_end": "2018-07-26",
+            "count": 0
+        },
+        {
+            "title": "event11",
+            "date": "2018-07-12",
+            "start_time": "01:00",
+            "end_time": "05:00",
+            "email_content": "text",
+            "max_participants": 20,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi massa, pretium sed condimentum condimentum, tempus eu orci. Etiam non nibh a risus malesuada eleifend molestie ut odio. Sed sit amet mauris nec ante laoreet imperdiet. Proin pharetra ultricies justo, quis egestas felis vestibulum vel. ",
+            "registration_begin": "2018-07-01",
+            "registration_end": "2018-07-10",
+            "count": 0
+        },
+        {
+            "title": "event12",
+            "date": "2018-09-01",
+            "start_time": "01:00",
+            "end_time": "05:00",
+            "email_content": "text",
+            "max_participants": 20,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi massa, pretium sed condimentum condimentum, tempus eu orci. Etiam non nibh a risus malesuada eleifend molestie ut odio. Sed sit amet mauris nec ante laoreet imperdiet. Proin pharetra ultricies justo, quis egestas felis vestibulum vel. ",
+            "registration_begin": "2018-07-15",
+            "registration_end": "2018-08-25",
+            "count": 0
+        }
+    ]
+}

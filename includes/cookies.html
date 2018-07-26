@@ -1,0 +1,13 @@
+<div ng-controller="CookieCtrl">
+    <div ng-if="!checkCookies()" class="cookies-wrapper">
+        <div class="cookies">
+            <span class="cookies-text">
+                Informuojame, kad šioje svetainėje naudojami slapukai (angl. cookies). Sutikdami, paspauskite mygtuką „Sutinku“ arba naršykite toliau.
+            </span>
+            <span class="cookies-button">
+                <button ng-click="allowCookies()">Sutinku</button>
+            </span>
+        </div>
+        <img src="img/close.png" class="close-button" ng-click="hideCookies()">
+    </div>
+</div>

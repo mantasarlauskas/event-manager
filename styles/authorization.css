@@ -1,0 +1,136 @@
+.message-alert {
+    color: #0054A6;
+    display: table;
+    margin: 0 auto;
+    font-size: 32px;
+    line-height: 720px;
+}
+.auth-title {
+    padding-top: 49px;
+    padding-bottom: 55px;
+}
+.auth-form {
+    margin: 0 auto;
+    width: 650px;
+}
+.event-list {
+    width: 100%;
+    color: #7E8890;
+    border: 1px solid #E4E9F2;
+    border-radius: 8px;
+    height: 44px;
+    padding-left: 18px;
+    outline: none;
+}
+.event-list, .event-list option {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 27px;
+}
+.first-line-input-grid, .second-line-input-grid {
+    display: grid;
+}
+.first-line-input-grid {
+    margin: 29px auto;
+    grid-template-columns: auto auto;
+    grid-column-gap: 30px;
+}
+.second-line-input-grid {
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 25px;
+}
+.checkbox-label {
+    margin-bottom: 17px;
+}
+.star {
+    color: red;
+}
+.submit-button-wrapper {
+    margin-top: 85px;
+}
+.checkboxes {
+    margin-top: 85px;
+}
+input[type="checkbox"] {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    margin: 0;
+}
+input[type="checkbox"] + label:before {
+    border: 1px solid #E4E9F2;
+    border-radius: 4px;
+    content: "\00a0";
+    display: inline-block;
+    font: 16px/1em sans-serif;
+    height: 16px;
+    margin: 0 18px 0 0;
+    padding: 0;
+    vertical-align: top;
+    width: 16px;
+}
+input[type="checkbox"]:checked + label:before {
+    background: #fff;
+    color: #333;
+    content: "\2713";
+    text-align: center;
+}
+.checkboxes .text-underline {
+    text-decoration: underline;
+    color: black;
+}
+.checkboxes input {
+    float: left;
+}
+.login-container {
+    min-height: 500px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+@media only screen and (max-width: 1024px) {
+    .auth-form {
+        width: 80%;
+    }    
+}
+@media only screen and (max-width: 680px) {
+    .message-alert {
+        font-size: 26px;
+    }
+    .login-form .submit-button-wrapper {
+        margin-top: 100px;
+    }
+    .registration-container .title {
+        padding-top: 21px;
+        padding-bottom: 21px;
+    }
+    .first-line-input-grid, .second-line-input-grid {
+        display: block;
+        margin: 0;
+    }
+    .event-list-wrapper, .input {
+        margin-bottom: 18px;
+    }
+    #event-list {
+        font-size: 0.95em;
+        padding-left: 10px;
+    }
+    .phone-number-input, .age-input {
+        float: left;
+        width: 48%;
+    }
+    .phone-number-input {
+        margin-right: 4%;
+    }
+    .registration-container {
+        padding-bottom: 50px;
+    }
+    .checkboxes {
+        margin-top: 26px;
+    }
+    .submit-button-wrapper {
+        margin-top: 40px;
+    }
+}

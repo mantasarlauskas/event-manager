@@ -1,0 +1,17 @@
+<div id="participants-table-modal" ng-controller="EventParticipantsCtrl">
+    <img src="img/close.png" class="close-button" ng-click="hideParticipantsTable()">
+    <div class="title event-participants-table-title">Dalyviai</div>   
+    <div class="table-wrapper">
+        <table class="participants-table table event-participants-table">
+            <tr class="table-header">
+                <th class="first-column">Nr.</th>
+                <th class="second-column">Vardas Pavardė</th>
+                <th class="third-column">Paštas</th>
+                <th class="fourth-column">Tel. numeris</th>
+                <th class="fifth-column">Amžius</th>
+            </tr>
+            <tbody participant-row ng-repeat="participant in filteredEventParticipants track by $index"></tbody>    
+        </table>
+    </div>    
+    <pager class='ng-pagination-event-participants' page-count='pagination.participantsPageCount' current-page='pagination.participantsCurrentPage'></pager> 
+</div>

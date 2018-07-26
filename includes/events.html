@@ -1,0 +1,22 @@
+<div class='events-table-wrapper'>
+    <div class='button-wrapper'>
+        <button ng-if="can('create_event')" type='button' ng-click='showCreateEvent()' class='button'>Naujas renginys</button>
+        <button ng-if="can('create_admin')" type='button' ng-click='showCreateAdmin()' class='button button-long'>Naujas administratorius</button>
+    </div>
+    <div ng-if='events.length === 0 || !events'>
+        Renginių sąrašas yra tuščias.
+    </div>
+    <table class='events-table table'>
+        <tr ng-if='events.length > 0' class='table-header'>
+            <th class='first-column'>Pavadinimas</th>
+            <th class='second-column'>Data</th>
+            <th class='more'></th>
+            <th class='third-column'>Aprašymas</th>
+            <th class='fourth-column'>Registracijos laikas</th>
+            <th class='fifth-column'>Dalyviai</th>
+            <th ng-if="can('create_event')" class='edit'></th>
+        </tr>
+        <tbody table-row ng-repeat='event in filteredEvents track by $index'></tbody>   
+    </table>
+</div>
+<pager page-count='pagination.eventsPageCount' current-page='pagination.eventsCurrentPage'></pager>

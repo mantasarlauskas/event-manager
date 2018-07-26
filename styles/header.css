@@ -1,0 +1,25 @@
+.header {
+    height: 56px;
+    background: #0054A6;
+    margin-bottom: 30px;
+}
+.user-logo {
+    vertical-align: text-bottom;
+}
+.menu-item {
+    height: 56px;
+    line-height: calc(56px - 20px - 2px);
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #FFF;
+    cursor: pointer;
+}
+.menu-item-last {
+    border: 1px white solid;
+    border-top: none;
+    border-bottom: none;
+}
+.menu-item:active {
+    transform: translateY(1px);
+}

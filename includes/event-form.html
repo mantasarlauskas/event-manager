@@ -1,0 +1,74 @@
+<div id="event-modal" ng-controller="EventFormCtrl">
+    <img src="img/close.png" class="close-button" ng-click="hideCreateEvent()">
+    <div ng-if="!editEvent" class="title event-title">Naujas renginys</div>
+    <div ng-if="editEvent" class="title event-title">Renginio redagavimas</div>
+    <form class="event-form" name="eventForm" novalidate>
+        <div class="message-error-wrapper">
+            <div class="message-error form-invalid" ng-if="eventForm.$submitted && eventForm.$invalid">Teisingai užpildykite visus formos laukus</div>
+            <div class="message-error form-invalid" ng-if="titleError">Renginys tokiu pavadinimu jau egzistuoja</div>
+        </div>
+        <div class="input input-left">
+            <label class="block-label" for="event-name">Pavadinimas</label>
+            <input type="text" ng-model="form.title" name="eventName" id="event-name" required>
+        </div>
+        <div class="input">
+            <label class="block-label" for="event-date">Data</label>
+            <input moment-picker format="YYYY/MM/DD" ng-model="form.date" name="eventDate" id="event-date" required autocomplete="off">
+            <div class="message-error-wrapper">
+                <div class="message-error error-block" ng-if="eventForm.eventName.$touched && eventForm.eventName.$error.required">Pavadinimo laukelis negali būti tuščias</div>
+            </div>
+            <div class="message-error-wrapper">
+                <div class="message-error error-block" ng-if="eventForm.eventDate.$touched && eventForm.eventDate.$error.required">Datos laukelis negali būti tuščias</div>
+                <div class="message-error error-block" ng-if="today > form.date">Data negali būti praeityje</div>    
+            </div>
+        </div>
+        <div class="input clearfix">
+            <label class="block-label">Renginio laikas</label>
+            <input class="input-left" moment-picker format="HH:mm" id="event-time-start" placeholder="Nuo" ng-model="form.start_time" name="eventTimeStart" required autocomplete="off">
+            <input moment-picker format="HH:mm" id="event-time-end" placeholder="Iki" ng-model="form.end_time" name="eventTimeEnd" required autocomplete="off">
+            <div class="message-error-wrapper">
+                <div class="message-error error-left" ng-if="eventForm.eventTimeStart.$touched && eventForm.eventTimeStart.$error.required">Pradžios laukas negali būti tuščias</div>
+                <div class="message-error error-right error-second-line" ng-if="eventForm.eventTimeEnd.$touched && eventForm.eventTimeEnd.$error.required">Pabaigos laukas negali būti tuščias</div>
+                <div class="message-error" ng-if="form.start_time >= form.end_time">Renginys negali baigtis ankščiau pradžios</div>
+            </div>
+        </div>
+        <div class="input">
+            <label class="block-label" for="event-description">Aprašymas</label>
+            <textarea id="event-description" ng-model="form.description" name="eventDescription" required></textarea>
+            <div class="message-error-wrapper">
+                <div class="message-error" ng-if="eventForm.eventDescription.$touched && eventForm.eventDescription.$error.required">Laukelis negali būti tuščias</div>
+            </div>
+        </div>
+        <div class="input">
+            <label class="block-label" for="email-content">El. laiško turinys</label>
+            <textarea id="email-content" ng-model="form.email_content" name="emailContent" required></textarea>
+            <div class="message-error-wrapper">
+                <div class="message-error" ng-if="eventForm.emailContent.$touched && eventForm.emailContent.$error.required">Laukelis negali būti tuščias</div>
+            </div>
+        </div>
+        <div class="input">
+            <label class="block-label" for="event-max-participants">Maksimalus dalyvių skaičius</label>
+            <input type="number" min="10" ng-minlength="minParticipantsLength" ng-model="form.max_participants" name="maxParticipants" id="event-max-participants" required>
+            <div class="message-error-wrapper">
+                <div class="message-error" ng-if="eventForm.maxParticipants.$touched && eventForm.maxParticipants.$error.required">Laukelis negali būti tuščias</div>
+                <div class="message-error" ng-if="eventForm.maxParticipants.$error.minlength">
+                    Mažiausias maksimalus dalyvių skaitmenų skaičius yra {{ minParticipantsLength }}
+                </div>
+            </div>
+        </div>
+        <div class="input last-input">
+            <label class="block-label">Registracija</label>
+            <input moment-picker format="YYYY/MM/DD" class="input-left" placeholder="Nuo" ng-model="form.registration_begin" name="eventDateStart" id="event-date-start" required autocomplete="off">
+            <input moment-picker format="YYYY/MM/DD" ng-model="form.registration_end" name="eventDateEnd" id="event-date-end" placeholder="Iki" required autocomplete="off">
+            <div class="message-error-wrapper">
+                <div class="message-error error-left" ng-if="eventForm.eventDateStart.$touched && eventForm.eventDateStart.$error.required">Pradžios laukas negali būti tuščias</div>
+                <div class="message-error error-block" ng-if="form.registration_begin >= form.date || form.registration_begin >= form.registration_end">Registracijos pradžia negali būti vėlesnė nei pabaiga</div> 
+                <div class="message-error error-right error-second-line" ng-if="eventForm.eventDateEnd.$touched && eventForm.eventDateEnd.$error.required">Pabaigos laukas negali būti tuščias</div>
+                <div class="message-error error-block" ng-if="form.registration_end >= form.date">Registracijos pabaiga negali būti vėlesnė nei renginio pradžia</div> 
+            </div>
+        <div class="button-wrapper modal-submit-button-wrapper">
+            <button ng-if="!editEvent" type="submit" ng-click="createEvent()" class="center-button button">Sukurti</button>
+            <button ng-if="editEvent" type="submit" ng-click="updateEvent()" class="center-button button">Patvirtinti</button>
+        </div>
+    </form>
+</div>

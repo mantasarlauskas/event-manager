@@ -1,0 +1,71 @@
+<div ng-include="'includes/header.html'"></div>
+<div class="container registration-container">
+    <div ng-if="registrationSuccess != 1 && events">
+        <div class="title auth-title">Registracija</div>
+        <form name="formData.registrationForm" class="auth-form" ng-submit="submitRegistrationForm()" novalidate>
+            <div class="message-error-wrapper form-invalid">
+                <div class="message-error" ng-if="formData.registrationForm.$submitted && formData.registrationForm.$invalid">Teisingai užpildykite visus formos laukus</div>
+                <div class="message-error" ng-if="registrationSuccess == 0 && !formData.registrationForm.$invalid">Būtina sutikti su renginio taisyklėmis</div>
+            </div>
+            <div class="event-list-wrapper">
+                <select ng-init="form.event_id = null" ng-model="form.event_id" name="eventList" class="event-list" required>
+                    <option value="" disabled selected hidden>Pasirinkite renginį</option>
+                    <option ng-repeat="event in events" ng-if="today >= event.registration_begin && today <= event.registration_end" value="{{event.title}}">{{ event.title }}</option>
+                </select>
+                <div class="message-error-wrapper">
+                    <div class="message-error" ng-if="formData.registrationForm.eventList.$touched && formData.registrationForm.eventList.$error.required">Laukelis negali būti tuščias</div>
+                </div>
+            </div>
+            <div class="first-line-input-grid">
+                <div class="input">
+                    <label class="block-label" for="first-name">Vardas<span class="star"> *</span></label>
+                    <input type="text" ng-pattern ="/^[a-zA-ZĄ\s]*$/" ng-model="form.first_name" name="firstName" id="first-name" required>
+                    <div class="message-error-wrapper">
+                        <div class="message-error" ng-if="formData.registrationForm.firstName.$touched && formData.registrationForm.firstName.$error.required">Laukelis negali būti tuščias</div>
+                        <div class="message-error" ng-if="formData.registrationForm.firstName.$error.pattern">Vardą gali sudaryti tik raidės</div>
+                    </div>
+                </div>
+                <div class="input">
+                    <label class="block-label" for="last-name">Pavardė<span class="star"> *</span></label>
+                    <input type="text" ng-pattern ="/^[a-zA-Z\s]*$/" ng-model="form.last_name" name="lastName" id="last-name" required>
+                    <div class="message-error-wrapper">
+                        <div class="message-error" ng-if="formData.registrationForm.lastName.$touched && formData.registrationForm.lastName.$error.required">Laukelis negali būti tuščias</div>
+                        <div class="message-error" ng-if="formData.registrationForm.lastName.$error.pattern">Pavardę gali sudaryti tik raidės</div>
+                    </div>
+                </div>
+            </div>
+            <div class="second-line-input-grid clearfix">
+                <div class="input">
+                    <label class="block-label" for="email">El. paštas<span class="star"> *</span></label>
+                    <input type="email" ng-model="form.email" name="email" id="email" required>
+                    <div class="message-error-wrapper">
+                        <div class="message-error" ng-if="formData.registrationForm.email.$touched && formData.registrationForm.email.$error.required">Laukelis negali būti tuščias</div>
+                        <div class="message-error" ng-if="formData.registrationForm.email.$error.email">Netinkamas El.pašto formatas</div>
+                    </div>
+                </div>
+                <div class="phone-number-input input">
+                    <label class="block-label" for="phone-number">Tel. numeris</label>
+                    <input type="tel" ng-model="form.telephone" name="phoneNumber" id="phone-number">
+                </div>
+                <div class="age-input input">
+                    <label class="block-label" for="age">Amžius</span></label>
+                    <input type="number" ng-model="form.age" name="age" id="age">
+                </div>
+            </div>
+            <div class="checkboxes">
+                <input type="checkbox" ng-model="formData.rules" id="rules">
+                <label class="block-label checkbox-label" for="rules">Sutinku su renginio <a class="text-underline">taisyklėmis</a></label>
+                <input type="checkbox" ng-model="formData.news" id="news">
+                <label class="block-label checkbox-label" for="news">Sutinku gauti naujienas el. paštu</label>
+            </div>
+            <div class="submit-button-wrapper button-wrapper">
+                <input type="submit" class="register-button center-button button" value="Registruotis">
+            </div>
+        </form>
+    </div>
+    <div ng-if="!events" class="message-alert">Renginių sąrašas yra tuščias</div>
+    <div ng-if="registrationSuccess == 1" class="message-alert" >Registracija sėkminga!</div>
+</div>
+<div ng-include="'includes/cookies.html'"></div>
+<div ng-include="'includes/footer.html'"></div>
+
