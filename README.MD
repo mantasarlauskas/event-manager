@@ -5,17 +5,24 @@ This project was created to be used along with API. However, API is not availabl
 ## Roles
 
 - **Guest**
-  - Can: login, register to events
+  - Can: 
+     - Login
+     - Register to events
 - **Admin**
-  - Can: view, edit and create events
+  - Can: 
+     - View events
+     - Edit events
+     - Create events
   - Credentials:
      - Email: *root@root*
      - Password: *root*
 - **Super Admin**
-  - Can: view events and create admins
+  - Can: 
+     - View events
+     - Create admins
   - Credentials:
      - Email: *admin@admin*
-     - Passowrd: *admin*
+     - Password: *admin*
 
 
 
